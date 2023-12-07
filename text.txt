@@ -1,0 +1,31 @@
+Project Planning and Analysis
+
+Music Source Integration: The app will integrate with Spotify, YouTube, and SoundCloud to fetch music.
+Music Download: Users can download music at 320kbps quality.
+Playlist Creation: Users can create and manage playlists.
+User Interface: The app will have an appealing visual aspect.
+User Accounts: To manage playlists and downloads.
+Technology Stack Decision
+Frontend: Vue.js 2.0
+Backend: Node.js (for handling API requests and integration with music services)
+Database: SQLite
+Additional Tools:
+Webpack: For bundling JavaScript files.
+Testing Tools: Enzyme for testing React components (though you're using Vue.js, so a Vue-specific testing tool like Vue Test Utils would be more appropriate).
+State Management: Redux and Flux are typically used with React. For Vue.js, Vuex is the standard choice.
+Note: Angular is a separate framework and not typically combined with Vue.js.
+Design Database Schema
+For your database, you'll need tables to manage users, playlists, and the songs within those playlists. A simplified schema could be:
+
+Users Table: To store user information.
+
+Columns: UserID (primary key), Username, Password (hashed), Email, etc.
+Playlists Table: To store playlist details.
+
+Columns: PlaylistID (primary key), UserID (foreign key to Users), PlaylistName, CreationDate, etc.
+Songs Table: To store details of songs.
+
+Columns: SongID (primary key), Title, Artist, Duration, SourceURL (from Spotify, YouTube, etc.), DownloadURL, etc.
+PlaylistSongs Table: A junction table to manage the many-to-many relationship between Playlists and Songs.
+
+Columns: PlaylistID (foreign key to Playlists), SongID (foreign key to Songs).
