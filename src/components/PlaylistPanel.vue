@@ -1,15 +1,31 @@
 <template>
   <div class="playlist-panel">
-    <!-- Playlist items -->
+    <h3>Your Playlists</h3>
+    <ul class="list-group">
+      <li class="list-group-item" v-for="playlist in playlists" :key="playlist.id">
+        {{ playlist.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
 <script>
 export default {
-  // Script for managing playlists
-}
+  name: 'PlaylistPanel',
+  data() {
+    return {
+      playlists: [
+        { id: 1, name: 'Chill Vibes' },
+        { id: 2, name: 'Workout Mix' },
+        // Add more playlists
+      ]
+    };
+  }
+};
 </script>
 
-<style>
-  /* CSS for playlist panel */
+<style scoped>
+.playlist-display {
+  /* Styles for the playlist display */
+}
 </style>
