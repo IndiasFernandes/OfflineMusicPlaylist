@@ -1,17 +1,27 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <SearchBar />
+    <MusicPlayer />
+    <PlaylistPanel />
+    <LoginRegister />
   </div>
 </template>
 
+
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import MusicPlayer from './components/MusicPlayer.vue';
+import SearchBar from './components/SearchBar.vue';
+import PlaylistPanel from './components/PlaylistPanel.vue';
+import LoginRegister from './components/LoginRegister.vue';
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    MusicPlayer,
+    SearchBar,
+    PlaylistPanel,
+    LoginRegister
   }
 }
 </script>
@@ -26,3 +36,5 @@ export default {
   margin-top: 60px;
 }
 </style>
+
+
