@@ -6,9 +6,22 @@
 </template>
 
 <script>
+
+import axios from 'axios';
+
 export default {
   name: 'SearchBar',
-  // Add script logic if necessary
+  data() {
+    return {
+      searchQuery: ''
+    };
+  },
+  methods: {
+    async search() {
+      const response = await axios.get(`/api/spotify/search?q=${this.searchQuery}`);
+      console.log(response.data); // Handle the results
+    }
+  }
 };
 </script>
 
